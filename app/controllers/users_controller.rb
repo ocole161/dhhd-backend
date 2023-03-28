@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if user
             render json: user, status: :ok
         else 
-            render json: { error: {"Not Found"} }, status: :not_found
+            render json: { error: "Not Found" }, status: :not_found
         end
     end
 
