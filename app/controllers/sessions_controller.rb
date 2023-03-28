@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
             puts user.id
             session[:user_id] = user.id
             puts session[:user_id]
+            puts session
             render json: user, status: :ok
         else
             render json: {error: "Invalid Username and/or Password"}, status: :unauthorized
