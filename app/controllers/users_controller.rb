@@ -6,9 +6,15 @@ class UsersController < ApplicationController
     end
 
     def show
+        puts session
+        puts session[:user_id]
         user = User.find_by(id: session[:user_id])
         puts user
-        render json: user, status: :ok
+        if user
+            render json: user, status: :ok
+        else 
+            puts "User not found"
+        end
     end
 
     def create
