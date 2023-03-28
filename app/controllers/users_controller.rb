@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        puts current_user
         render json: current_user, status: :ok
     end
 
