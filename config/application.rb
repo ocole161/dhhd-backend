@@ -36,14 +36,10 @@ module DenverHhDepot
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.session_store :cookie_store, key: '_interslice_session'
-
     # ▾ Must add these lines! ▾
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-
-    config.middleware.use config.session_store, config.session_options
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
